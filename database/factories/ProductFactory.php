@@ -26,6 +26,7 @@ class ProductFactory extends Factory
             'name'        => $this->faker->unique()->word,
             'description' => $this->faker->sentence(),
             'price' => $this->faker->randomFloat(2, 0, 100),
+            'assessments_id' => 1
         ];
     }
 }

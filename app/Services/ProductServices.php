@@ -16,4 +16,8 @@ class ProductServices
     public function show($id) {
         return $this->productRepository->show($id);
     }
+
+    public function create($request) {
+        return $this->productRepository->create($request);
+    }
 }

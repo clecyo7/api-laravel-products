@@ -38,7 +38,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $this->productServices->create($request);
     }
 
     /**
@@ -49,7 +49,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        return $this->productServices->index($id);
+        return $this->productServices->show($id);
     }
 
     /**

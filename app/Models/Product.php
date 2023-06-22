@@ -13,8 +13,10 @@ class Product extends Model
     protected $fillable = [
         'name',
         'description',
+        'price',
         'image', 
-        'category_id'
+        'category_id', 
+        'assessments_id'
     ];
 
 
@@ -54,5 +56,10 @@ class Product extends Model
             }
         })
             ->paginate($total);
+    }
+
+    public function assessments()
+    {
+        return $this->belongsTo(Assessments::class);
     }
 }
