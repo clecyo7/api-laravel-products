@@ -3,18 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Services\ProductServices;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+    public function __construct(private ProductServices $productServices) {}
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        return $this->productServices->index($request);
     }
 
     /**
@@ -44,9 +47,9 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        return $this->productServices->index($id);
     }
 
     /**

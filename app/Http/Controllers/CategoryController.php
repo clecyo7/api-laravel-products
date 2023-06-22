@@ -3,19 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Services\CategoryServices;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    //private $categoryServices;
+    
+    public function __construct( private CategoryServices $categoryServices){}
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+   
+    public function index(Request $request)
     {
-        //
+        return $this->categoryServices->index($request);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -44,9 +50,9 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
-        //
+        return $this->categoryServices->show($id);
     }
 
     /**

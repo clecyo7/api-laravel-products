@@ -22,7 +22,8 @@ return new class extends Migration
                             ->onUpdate('cascade')
                             ->onDelete('cascade');
             $table->string('name' , 100)->unique();
-            $table->text('description')->nullable();
+            $table->text('description');
+            $table->float('price');
             $table->string('image')->nullable();
             $table->timestamps();
         });
